@@ -19,9 +19,9 @@ public class BrowserSetUp {
 
 
     public static void main(String[] args) {
-        BrowserSetUp b = new BrowserSetUp();
+        BrowserSetUp ba = new BrowserSetUp();
         initChromeDriver("http://www.phptravels.net/");
-        System.out.println(b.getDriver());
+        System.out.println(ba.getDriver());
     }
 
 
