@@ -1,0 +1,32 @@
+pipeline{
+    agent any
+
+        stages{
+            stage('Compile stage'){
+
+                step{
+                 withGradle(gradle: 'Gradle'){
+                      sh './gradlew clean'
+                    }
+                }
+            }
+
+            stage('Testing stage'){
+
+                 step{
+                  withGradle(gradle: 'Gradle'){
+                       sh './gradlew cucumber'
+                     }
+                 }
+            }
+
+
+        }
+
+
+
+
+
+
+
+}

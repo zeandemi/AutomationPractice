@@ -7,21 +7,28 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
+import java.io.File;
 import java.util.Objects;
 
 
 public class BrowserSetUp {
 
     protected WebDriver driver;
-    private static String path = System.getProperties().getProperty("user.dir");
+    private static String path = userDir();
     private static String driverPath = path + "\\lib\\";
     public String BaseUrl = "http://www.phptravels.net/";
 
 
     public static void main(String[] args) {
         BrowserSetUp ba = new BrowserSetUp();
+        System.out.println(path);
+        System.out.println(driverPath);
         initChromeDriver("http://www.phptravels.net/");
         System.out.println(ba.getDriver());
+    }
+
+    static  String userDir(){
+        return  new File("").getAbsoluteFile().getAbsolutePath();
     }
 
 
