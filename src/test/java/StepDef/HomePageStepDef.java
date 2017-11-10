@@ -1,5 +1,6 @@
 package StepDef;
 
+import CukeSetUp.Hook;
 import PageTest.HomePageTest;
 import Pages.HomePage;
 import cucumber.api.PendingException;
@@ -15,7 +16,7 @@ public class HomePageStepDef {
 
     @Given("^I am on home page$")
     public void iAmOnHomePage()throws Throwable{
-        HomePage homePage = new HomePage(driver);
+        homePageTest = new HomePageTest(Hook.driver);
         homePageTest.verifyHomePageTitle();
         throw new PendingException();
     }

@@ -12,7 +12,7 @@ public class HomePageTest {
 
     public HomePageTest(WebDriver driver){
         this.driver = driver;
-        homePage = new HomePage(Hook.driver);
+        homePage = new HomePage(driver);
     }
 
     public void verifyHomePageTitle(){
