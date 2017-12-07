@@ -2,7 +2,6 @@ package StepDef;
 
 import CukeSetUp.Hook;
 import PageTest.HomePageTest;
-import Pages.HomePage;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -11,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 
 public class HomePageStepDef {
 
-    WebDriver driver;
+    //WebDriver driver;
     HomePageTest homePageTest;
 
     @Given("^I am on home page$")

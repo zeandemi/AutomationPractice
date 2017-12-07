@@ -1,23 +1,28 @@
 package CukeSetUp;
 
 import CommonPackage.BrowserSetUp;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+
 
 public class Hook {
 
     public static WebDriver driver;
-    BrowserSetUp browserSetUp;
+    public BrowserSetUp browserSetUp;
 
-    @BeforeClass
-    public WebDriver initializeDriver(){
+
+    @Before
+    public void initializeDriver() throws InterruptedException {
+        browserSetUp = new BrowserSetUp();
+        browserSetUp.initDriver();
         driver = browserSetUp.getDriver();
-        return  driver;
+        Thread.sleep(3000);
+
     }
 
-    @AfterClass
-    public void closeBroswer(){
+    @After
+    public void closeBroswer() {
         browserSetUp.closeDriver();
     }
 }

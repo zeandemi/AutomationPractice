@@ -5,22 +5,25 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
 
 import java.io.File;
-import java.util.Objects;
+
 
 
 public class BrowserSetUp {
 
-    protected WebDriver driver;
+    private WebDriver driver;
     private static String path = userDir();
     private static String driverPath = path + "\\lib\\";
-    public String BaseUrl = "http://www.phptravels.net/";
+    private String appDriver = "chrome";
+    private String appUrl = "http://www.phptravels.net/";
+    //public String BaseUrl = "http://www.phptravels.net/";
 
 
-    static  String userDir(){
-        return  new File("").getAbsoluteFile().getAbsolutePath();
+
+
+    static String userDir() {
+        return new File("").getAbsoluteFile().getAbsolutePath();
     }
 
 
@@ -38,9 +41,9 @@ public class BrowserSetUp {
     }
 
     private static WebDriver initChromeDriver(String Url) {
-        System.setProperty("webdriver.chrome.driver",driverPath +"chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", driverPath + "chromedriver.exe");
         WebDriver driver = new ChromeDriver();
-        driver.get(Url);
+        driver.navigate().to(Url);
         driver.manage().window().fullscreen();
         return driver;
     }
@@ -55,20 +58,23 @@ public class BrowserSetUp {
     }
 
     public void setDriver(String appDriver, String appUrl) {
-        if (Objects.equals(appDriver, "internetExplorer")) {
-            driver = initInternetExplorerDriver(appUrl);
-        }
-        if (Objects.equals(appDriver, "chrome")) {
-            driver = initChromeDriver(appUrl);
-        } else if (Objects.equals(appDriver, "firefox")) {
-            driver = initFirefoxDriver(appUrl);
-        }
-    }
+        switch (appDriver){
+            case "chrome":
+                driver = initChromeDriver(appUrl);
+                break;
 
-    @BeforeClass
-    @Parameters({"appDriver"})
-    public void initDriver(String appDriver, String appUrl) {
-        this.BaseUrl = appUrl;
+            case "ie":
+                driver = initInternetExplorerDriver(appUrl);
+                break;
+
+            case "firefox":
+                driver = initFirefoxDriver(appUrl);
+                break;
+        }
+
+    }
+    //@BeforeClass
+    public void initDriver() {
         try {
             setDriver(appDriver, appUrl);
         } catch (Exception e) {
@@ -77,7 +83,8 @@ public class BrowserSetUp {
 
     }
 
-    @AfterClass
+
+   // @AfterClass
     public void closeDriver() {
         driver.quit();
     }

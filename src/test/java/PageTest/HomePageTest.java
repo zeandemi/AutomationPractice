@@ -8,7 +8,7 @@ import org.testng.Assert;
 public class HomePageTest {
 
     HomePage homePage;
-    private WebDriver driver;
+    public WebDriver driver;
 
     public HomePageTest(WebDriver driver){
         this.driver = driver;
