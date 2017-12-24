@@ -39,17 +39,6 @@
     <orderEntry type="library" name="Gradle: com.google.errorprone:error_prone_annotations:2.0.18" level="project" />
     <orderEntry type="library" name="Gradle: com.google.j2objc:j2objc-annotations:1.1" level="project" />
     <orderEntry type="library" name="Gradle: org.codehaus.mojo:animal-sniffer-annotations:1.14" level="project" />
-    <orderEntry type="module-library">
-      <library name="testng">
-        <CLASSES>
-          <root url="jar://$APPLICATION_HOME_DIR$/plugins/testng/lib/testng.jar!/" />
-          <root url="jar://$APPLICATION_HOME_DIR$/plugins/testng/lib/jcommander.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="library" name="info.cukes:cucumber-testng:1.2.2" level="project" />
     <orderEntry type="library" name="Gradle: com.beust:jcommander:1.64" level="project" />
     <orderEntry type="library" name="Gradle: info.cukes:cucumber-junit:1.2.5" level="project" />
     <orderEntry type="library" name="Gradle: info.cukes:cucumber-picocontainer:1.2.5" level="project" />
@@ -59,9 +48,6 @@
     <orderEntry type="library" name="Gradle: org.picocontainer:picocontainer:2.15" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.testng:testng:6.11" level="project" />
     <orderEntry type="library" name="Gradle: org.yaml:snakeyaml:1.17" level="project" />
-    <orderEntry type="library" name="info.cukes:gherkin-jvm-deps:1.0.3" level="project" />
-    <orderEntry type="library" name="info.cukes:gherkin:2.7.6" level="project" />
-    <orderEntry type="library" name="info.cukes:gherkin:2.12.2" level="project" />
-    <orderEntry type="library" name="info.cukes:cucumber-core:1.0.0.RC14" level="application" />
+    <orderEntry type="library" name="info.cukes:cucumber-testng:1.2.2" level="project" />
   </component>
 </module>

@@ -1,4 +1,4 @@
-package CukeSetUp;
+package StepDef;
 
 import CommonPackage.BrowserSetUp;
 import cucumber.api.java.After;

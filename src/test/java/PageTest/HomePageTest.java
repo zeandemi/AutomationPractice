@@ -1,6 +1,5 @@
 package PageTest;
 
-import CukeSetUp.Hook;
 import Pages.HomePage;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
