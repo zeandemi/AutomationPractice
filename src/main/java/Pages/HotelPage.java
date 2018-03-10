@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 public class HotelPage extends PageHeader {
 
 
-    private final WebDriver driver;
+    private WebDriver driver;
 
     public HotelPage(WebDriver driver) {
         super(driver);

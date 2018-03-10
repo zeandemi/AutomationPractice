@@ -1,3 +1,4 @@
+
 group 'AutomationPractice'
 version '1.0-SNAPSHOT'
 
@@ -23,27 +24,30 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     testCompile group: 'info.cukes', name: 'cucumber-picocontainer', version: '1.2.5'
     testCompile group: 'org.mockito', name: 'mockito-all', version: '1.10.19'
-   provided group: 'info.cukes', name: 'gherkin', version: '2.12.2'
+
 
 
 }
 
 task cucumber(type: Test ){
-    dependsOn test
-    include '**/RunCukes*'
+    //dependsOn test
+    include '**/CukeSetUp/RunCukes*'
+
+    beforeTest {TestDescriptor descriptor ->
+        logger.info("${now()} Executing test ${descriptor.name}[${descriptor.className}]...")
+    }
 }
 
 sourceSets{
     main{
         java{
-
+            srcDirs 'src/main/java'
         }
     }
 
     test{
         java{
             srcDirs 'src/test/java'
-
         }
         resources{
             srcDirs 'src/test/resources'

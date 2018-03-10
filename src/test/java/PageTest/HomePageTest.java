@@ -1,22 +1,24 @@
 package PageTest;
 
 import Pages.HomePage;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.openqa.selenium.WebDriver;
+
 
 public class HomePageTest {
 
     HomePage homePage;
     public WebDriver driver;
 
-    public HomePageTest(WebDriver driver){
-        this.driver = driver;
+    public HomePageTest(HomePage homePage){
+        this.homePage = homePage;
         homePage = new HomePage(driver);
     }
 
     public void verifyHomePageTitle(){
         String actualHomeTitle = homePage.getHomePageTitle();
-        String expectedHomeTitle = "";
-        Assert.assertEquals(actualHomeTitle,expectedHomeTitle);
+        System.out.println(homePage.getHomePageTitle());
+        String expectedHomeTitle = "PHPTRAVELS | Travel Technology Partner";
+       Assert.assertEquals(actualHomeTitle,expectedHomeTitle);
     }
 }

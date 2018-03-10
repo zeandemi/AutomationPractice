@@ -4,23 +4,24 @@ import Pages.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
 import java.util.List;
 
 public class PageHeader {
 
     private WebDriver driver;
     private List<WebElement> childrenElements;
-    By hometab = By.xpath("");
-    By hotelTab = By.xpath("");
-    By flightsTab = By.xpath("");
-    By toursTab = By.xpath("");
-    By visaTab = By.xpath("");
-    By carsTab = By.xpath("");
-    By blogsTab = By.xpath("");
-    By contactsTab = By.xpath("");
-    By myAccount = By.id("li_myaccount");
-    By sign_up = By.linkText("http://www.phptravels.net/register");
-    By log_in = By.linkText("http://www.phptravels.net/login");
+    private By homeTab = By.xpath("/html/body/div[5]/div/div/div[1]/a/img");
+    private By hotelTab = By.xpath("//*[@id=\"offcanvas-menu\"]/ul/li[1]/a");
+    private By flightsTab = By.xpath("//*[@id=\"offcanvas-menu\"]/ul/li[2]/a");
+    private By toursTab = By.tagName("/html/body/div[6]/div/div/div[3]/nav/ul/li[3]/a/span[2]/img");
+    private By visaTab = By.xpath("");
+    private By carsTab = By.xpath("");
+    private By blogsTab = By.xpath("");
+    private By contactsTab = By.xpath("");
+    private By myAccount = By.id("li_myaccount");
+    private By sign_up = By.linkText("http://www.phptravels.net/register");
+    private By log_in = By.linkText("http://www.phptravels.net/login");
 
     public PageHeader(WebDriver driver) {
         this.driver = driver;
@@ -28,7 +29,7 @@ public class PageHeader {
 
 
     public HomePage clickHomePageTab() {
-        WebElement homeTabButton = driver.findElement(hotelTab);
+        WebElement homeTabButton = driver.findElement(homeTab);
         try {
             if (homeTabButton.isDisplayed() || homeTabButton.isEnabled()) {
                 homeTabButton.click();
@@ -126,8 +127,8 @@ public class PageHeader {
     public LogInPage clickLogInTab() {
         WebElement logInTabButton = driver.findElement(log_in);
         childrenElements = clickMyAccount();
-        for (WebElement child : childrenElements){
-            if(child.findElement(By.linkText("")).equals(logInTabButton)) {
+        for (WebElement child : childrenElements) {
+            if (child.findElement(By.linkText("")).equals(logInTabButton)) {
                 logInTabButton.click();
             }
         }
@@ -137,8 +138,8 @@ public class PageHeader {
     public SigUpPage clickSignUpTab() {
         WebElement SignInTabButton = driver.findElement(sign_up);
         childrenElements = clickMyAccount();
-        for (WebElement child : childrenElements){
-            if(child.findElement(By.linkText("")).equals(SignInTabButton)) {
+        for (WebElement child : childrenElements) {
+            if (child.findElement(By.linkText("")).equals(SignInTabButton)) {
                 SignInTabButton.click();
             }
         }
@@ -146,10 +147,10 @@ public class PageHeader {
     }
 
 
-    public List<WebElement> clickMyAccount(){
+    public List<WebElement> clickMyAccount() {
         List<WebElement> options = null;
         WebElement myAccountButton = driver.findElement(myAccount);
-        if (myAccountButton.isEnabled()){
+        if (myAccountButton.isEnabled()) {
             myAccountButton.click();
             options = myAccountButton.findElements(By.xpath("//li[@class='go-text-right']"));
         }

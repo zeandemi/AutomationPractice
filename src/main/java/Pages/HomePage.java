@@ -19,7 +19,7 @@ public class HomePage extends PageHeader {
     }
 
 
-
-
-
+    public  WebDriver getDriver() {
+        return driver;
+    }
 }
