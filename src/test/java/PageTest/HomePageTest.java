@@ -17,7 +17,6 @@ public class HomePageTest {
 
     public void verifyHomePageTitle(){
         String actualHomeTitle = homePage.getHomePageTitle();
-        System.out.println(homePage.getHomePageTitle());
         String expectedHomeTitle = "PHPTRAVELS | Travel Technology Partner";
        Assert.assertEquals(actualHomeTitle,expectedHomeTitle);
     }
