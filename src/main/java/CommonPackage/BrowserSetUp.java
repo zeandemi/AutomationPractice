@@ -3,8 +3,6 @@ package CommonPackage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 
 import java.io.File;
 
@@ -17,7 +15,6 @@ public class BrowserSetUp {
     private static String driverPath = path + "\\lib\\";
     private String appDriver = "chrome";
     private String appUrl = "http://www.phptravels.net/";
-    //public String BaseUrl = "http://www.phptravels.net/";
 
 
 
