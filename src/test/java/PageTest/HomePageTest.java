@@ -15,6 +15,7 @@ public class HomePageTest {
         homePage = new HomePage(driver);
     }
 
+
     public void verifyHomePageTitle(){
         String actualHomeTitle = homePage.getHomePageTitle();
         String expectedHomeTitle = "PHPTRAVELS | Travel Technology Partner";
