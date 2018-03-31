@@ -12,19 +12,19 @@ public class HomePageStepDef {
     HomePage homePage;
 
     @Given("^I am on home page$")
-    public void iAmOnHomePage() throws Throwable {
+    public void iAmOnHomePage(){
         homePage = new HomePage(Hook.driver);
         homePage.getHomePageTitle();
     }
 
     @When("^I click on the home page tab$")
-    public void iClickOnTheHomePageTab() throws Throwable {
+    public void iClickOnTheHomePageTab(){
         homePage.clickHomePageTab();
 
     }
 
     @Then("^I get a confirmation$")
-    public void iGetAConfirmation() throws Throwable {
+    public void iGetAConfirmation(){
         HomePageTest homePageTest = new HomePageTest(homePage);
         homePageTest.verifyHomePageTitle();
 
